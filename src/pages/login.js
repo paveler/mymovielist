@@ -1,4 +1,4 @@
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory, useLocation, Link } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import { useAuth } from "../auth";
 
@@ -21,8 +21,8 @@ export default function LoginPage() {
             history.replace(from);
         }
     })
-    let login = () => {
-        
+    let login = (e) => {
+        e.preventDefault()
         setLoading(true)
         auth.login(username, password).then(() => {
             history.replace(from);
@@ -36,8 +36,9 @@ export default function LoginPage() {
 
     return (
         <div className="content form">
-            { /* Here is from path: */}
-            <p>You must log in to view the page <b>{from.pathname}</b></p>
+            {(from.pathname == "/add") ?
+            <h1>Please, log in to recommend a movie</h1> :
+            <h1>Log in</h1>}
             
             <input type="text" placeholder="login" onChange={(e) => {
                 setUsername(e.target.value)
@@ -46,7 +47,12 @@ export default function LoginPage() {
                 setPassword(e.target.value)
             }} />
             {error && <div className="error">{error}</div>}
-            {!loading ? <button onClick={login}>Log in</button> : <Loader  text='Logging in...'/>}
+
+            {!loading ? 
+            <div>
+                <button onClick={login}>Log in</button>
+                <Link to="register">Register</Link>
+            </div> : <Loader  text='Logging in...'/>}
         </div>
     )
 }

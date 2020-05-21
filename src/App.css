@@ -3,6 +3,8 @@
 body {
     font-family: sans-serif;
     font-size: 16px;
+    background-color: #444;
+    color: #eee;
 }
 
 .content {
@@ -17,10 +19,15 @@ button {
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 6px;
-    background-color: #eee;
-    border:solid 1px #aaa;
+    background-color: chartreuse;
+    color: #222;
+    border:none;
     outline: none;
     margin: 5px 5px 5px 0;
+}
+button.disabled {
+    opacity: .3;
+    cursor:default;
 }
 button:active {
     background-color: #333;
@@ -35,6 +42,15 @@ button:active {
     margin: 15px 0;
     border-radius: 6px;
     display: block;
+    width: 200px;
+}
+
+a {
+    color: chartreuse;
+}
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px 0 20px 0;
 }
 
 .error {
@@ -49,4 +65,26 @@ button:active {
 }
 .request-info span {
     margin: 5px 0;
+}
+form .twitter {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+form .twitter input {
+    margin:0 0 10px 0;
+    padding-left: 20px;
+    width: 190px;
+}
+
+form .tip {
+    margin-top: -5px;
+}
+
+form .twitter:before {
+    content: "@";
+    color: #aaa;
+    position: absolute;
+    left: 5px;
+    top:13px;
 }

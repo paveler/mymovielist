@@ -1,0 +1,55 @@
+.movies-table {
+    background-color: #222;
+    padding:15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+.movies-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.movies-table table a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.movies-table table thead {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: chartreuse;
+    font-size: 18px;
+    opacity: .5;
+}
+.movies-table table thead td {
+    border:none
+}
+.movies-table table td {
+    padding:15px 15px 15px 0;
+    border-top:solid 1px rgba(255,255,255,.2)
+}
+
+.movies-table .total {
+    opacity: .5;
+    font-size: 14px;
+    display: block;
+}
+
+.small-poster {
+    height: 70px;
+}
+
+.table-sorting {
+    display: flex;
+    margin-bottom: 10px;
+}
+.sort-option {
+    background-color: #222;
+    padding:5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.sort-option.active {
+    background-color: chartreuse;
+    color: #222;
+}
